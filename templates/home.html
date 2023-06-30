@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loan Approval Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    label {
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    select {
+      width: 200px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      width: 100px;
+      padding: 8px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Loan Approval Prediction</h1>
+  <form action="{{ url_for('predict_datapoint')}}" method="post">
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age" placeholder="Enter age" required>
+
+    <label for="marital">Marital Status:</label>
+    <select id="marital" name="marital" required>
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      <option value="divorced">Divorced</option>
+      <option value="unknown">Unkown</option>
+    </select>
+
+    <label for="personalLoan">Personal Loan:</label>
+    <select id="personalLoan" name="personalLoan" required>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+      <option value="unknown">Unkown</option>
+    </select>
+
+    <label for="housingLoan">Housing Loan:</label>
+    <select id="housingLoan" name="housingLoan" required>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+      <option value="unknown">Unkown</option>
+    </select>
+
+    <label for="everDefaulted">Ever Defaulted:</label>
+    <select id="everDefaulted" name="everDefaulted" required>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+      <option value="unknown">Unkown</option>
+    </select>
+
+    <input type="submit" value="Predict">
+  </form>
+  <h2 style="text-align: center;">Prediction Result: {{results}}</h2>
+</body>
