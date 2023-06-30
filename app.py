@@ -2,7 +2,7 @@ from flask import Flask,request,render_template
 import numpy as np
 import pandas as pd
 import sys
-sys.path.append('/Users/puttu/Downloads/MLOPs-main/')
+sys.path.append('/Users/puttu/Downloads/mlops12345/')
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
@@ -36,10 +36,10 @@ def predict_datapoint():
         print("Mid Prediction")
         results=predict_pipeline.predict(pred_df)
         print("after Prediction")
-        if(results[0]==1):
-            results1 = 'Yes'
-        else:
-            results1 = 'No'
+        if(results[0] > 0.5):
+            results1 = 'Loan Approved'
+        else :
+            results1 = 'Loan not Approved'
         return render_template('home.html',results=results1)
     
 

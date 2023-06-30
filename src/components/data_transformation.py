@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/Users/puttu/Downloads/MLOPs-main/')
+sys.path.append('/Users/puttu/Downloads/mlops12345/')
 from dataclasses import dataclass
 
 import numpy as np 

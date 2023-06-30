@@ -1,6 +1,6 @@
 import sys
 import os
-sys.path.append('/Users/puttu/Downloads/MLOPs-main/')
+sys.path.append('/Users/puttu/Downloads/mlops12345/')
 import pandas as pd
 from src.exceptions import CustomException
 from src.util import load_object

@@ -15,12 +15,94 @@
     p {
       font-size: 18px;
     }
+    .button-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 20px;
+      height:100vh;
+    }
+    .custom-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 25px;
+      position: relative;
+      border: solid 2px transparent;
+      gap: 6px;
+      background: linear-gradient(white, white) padding-box, linear-gradient(to right, #1d2b64, #03a9f4) border-box;
+      border-radius: 10px;
+    }
+    .custom-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: inherit;
+    }
+
+    .custom-button:hover {
+        background: linear-gradient(90deg, #1d2b64 0%, #03a9f4 100%);
+        cursor: pointer;
+    }
+
+    .custom-button .button-text {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21px;
+        background: linear-gradient(90deg, #1d2b64 0%, #03a9f4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .custom-button .button-text-black {   
+        font-size: 18px;
+        line-height: 21px;
+        color: #000000;
+    }
+
+    .custom-button:hover .button-text {
+        background: unset;
+        color: #fff;
+        -webkit-text-fill-color: #fff;
+    }
+
+    .custom-button:hover .button-text-black {
+        color: #fff;
+    }
+
+    .custom-button .button-icon {
+          color: #1d2b64;
+    }
+
+    .custom-button:hover .button-icon {
+          color: #fff;
+    }
+
+
   </style>
 </head>
 <body>
   <h1>Loan Approval</h1>
   <p>Welcome to our Loan Approval website!</p>
   <p>Here, you can predict loan approvals based on various parameters.</p>
-  <p>Click <a href="home.html">here</a> to get started.</p>
+  <p>Click on the button below to get started.</p>
+  <div class="button-wrap">
+    <button class='custom-button'>
+        <span class='button-text'><a id="myButton">Loan Approval</a></span>
+    </button>
+  </div>
 </body>
+<script>
+  var button = document.getElementById("myButton");
+  button.addEventListener("click", function() {
+    var currentUrl = window.location.href;
+    button.href = currentUrl+'/predictdata';
+    // Uncomment the line below if you want the button to open the link in a new tab
+    // button.target = "_blank";
+  });
+</script>
 </html>

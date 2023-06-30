@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/Users/puttu/Downloads/MLOPs-main/')
+sys.path.append('/Users/puttu/Downloads/mlops12345/')
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBClassifier
